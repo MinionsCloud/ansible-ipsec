@@ -5,6 +5,11 @@
   - include: handlers.yml
 
   tasks: 
+    
+  - name: install ipsec tools
+    package:
+      name: ipsec-tools
+      state: latest
 
   - lineinfile: dest=/etc/ipsec-tools.conf line="flush;" create=yes
     notify:
